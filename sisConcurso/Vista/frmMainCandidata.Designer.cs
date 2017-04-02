@@ -31,17 +31,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.grdDatos = new System.Windows.Forms.DataGridView();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.chkStatus = new System.Windows.Forms.CheckBox();
             this.cNombreCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cFDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cCorre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNivelStudio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cRaking = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.chkStatus = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +77,44 @@
             this.grdDatos.Size = new System.Drawing.Size(747, 309);
             this.grdDatos.TabIndex = 2;
             // 
+            // cNombreCom
+            // 
+            this.cNombreCom.DataPropertyName = "cNombreCom";
+            this.cNombreCom.HeaderText = "Nombre Completo";
+            this.cNombreCom.Name = "cNombreCom";
+            this.cNombreCom.Width = 150;
+            // 
+            // cFDN
+            // 
+            this.cFDN.DataPropertyName = "cFDN";
+            this.cFDN.HeaderText = "Fecha Nacimiento";
+            this.cFDN.Name = "cFDN";
+            // 
+            // cDescripcion
+            // 
+            this.cDescripcion.DataPropertyName = "cDescripcion";
+            this.cDescripcion.HeaderText = "Descripcion";
+            this.cDescripcion.Name = "cDescripcion";
+            this.cDescripcion.Width = 150;
+            // 
+            // cCorre
+            // 
+            this.cCorre.DataPropertyName = "cCorre";
+            this.cCorre.HeaderText = "Correo";
+            this.cCorre.Name = "cCorre";
+            // 
+            // cNivelStudio
+            // 
+            this.cNivelStudio.DataPropertyName = "cNivelStudio";
+            this.cNivelStudio.HeaderText = "Nivel Studio";
+            this.cNivelStudio.Name = "cNivelStudio";
+            // 
+            // cRaking
+            // 
+            this.cRaking.DataPropertyName = "cRaking";
+            this.cRaking.HeaderText = "Raking";
+            this.cRaking.Name = "cRaking";
+            // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(12, 404);
@@ -85,6 +123,7 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -126,44 +165,6 @@
             this.chkStatus.Text = "Status";
             this.chkStatus.UseVisualStyleBackColor = true;
             this.chkStatus.CheckedChanged += new System.EventHandler(this.chkStatus_CheckedChanged);
-            // 
-            // cNombreCom
-            // 
-            this.cNombreCom.DataPropertyName = "cNombreCom";
-            this.cNombreCom.HeaderText = "Nombre Completo";
-            this.cNombreCom.Name = "cNombreCom";
-            this.cNombreCom.Width = 150;
-            // 
-            // cFDN
-            // 
-            this.cFDN.DataPropertyName = "cFDN";
-            this.cFDN.HeaderText = "Fecha Nacimiento";
-            this.cFDN.Name = "cFDN";
-            // 
-            // cDescripcion
-            // 
-            this.cDescripcion.DataPropertyName = "cDescripcion";
-            this.cDescripcion.HeaderText = "Descripcion";
-            this.cDescripcion.Name = "cDescripcion";
-            this.cDescripcion.Width = 150;
-            // 
-            // cCorre
-            // 
-            this.cCorre.DataPropertyName = "cCorre";
-            this.cCorre.HeaderText = "Correo";
-            this.cCorre.Name = "cCorre";
-            // 
-            // cNivelStudio
-            // 
-            this.cNivelStudio.DataPropertyName = "cNivelStudio";
-            this.cNivelStudio.HeaderText = "Nivel Studio";
-            this.cNivelStudio.Name = "cNivelStudio";
-            // 
-            // cRaking
-            // 
-            this.cRaking.DataPropertyName = "cRaking";
-            this.cRaking.HeaderText = "Raking";
-            this.cRaking.Name = "cRaking";
             // 
             // frmMainCandidata
             // 

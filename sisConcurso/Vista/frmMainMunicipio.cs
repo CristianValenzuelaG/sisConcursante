@@ -42,7 +42,13 @@ namespace sisConcurso.Vista
         private void frmMainMunicipio_Load(object sender, EventArgs e)
         {
             CargarMunicipio(txtNombre.Text);
-            lblCantidad.Text = grDatos.Rows.Count.ToString();
+            lblCantidad.Text ="Registros: "+ grDatos.Rows.Count.ToString();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmRegistroMunicipio nMuni = new frmRegistroMunicipio();
+            nMuni.ShowDialog();
         }
     }
 }

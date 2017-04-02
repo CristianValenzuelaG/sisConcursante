@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Core.Objects.DataClasses;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,48 @@ namespace sisConcurso.Modelo.Manager
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
+
+        public static void Guarda(municipio nMunicipio)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    if (nMunicipio.pkMunicipio > 0)
+                    {
+                        ctx.Entry(nMunicipio).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        ctx.Entry(nMunicipio).State = EntityState.Added;
+                    }
+                    ctx.SaveChanges();
+
+                }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+
+        public static List<municipio> llenarcombo() // cargar datos de la base de datos 
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    return ctx.municipios.ToList();
+                }
+
+            }
+            catch (Exception)
+            {
+
                 throw;
             }
         }

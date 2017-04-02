@@ -52,5 +52,10 @@ namespace sisConcurso.Modelo
         public virtual municipio municipio { get; set; }
 
         public virtual usuario usuario { get; set; }
+
+        public candidata()
+        {
+            this.cStatus = true;
+        }
     }
 }

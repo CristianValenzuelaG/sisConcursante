@@ -32,6 +32,7 @@ namespace sisConcurso.Vista
         private void frmMainCandidata_Load(object sender, EventArgs e)
         {
             this.CargarCandidata(txtNombre.Text);
+           
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -47,6 +48,12 @@ namespace sisConcurso.Vista
         private void chkStatus_CheckedChanged(object sender, EventArgs e)
         {
             this.CargarCandidata(txtNombre.Text);
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmRegistroCandidata nue = new frmRegistroCandidata();
+            nue.ShowDialog();
         }
     }
 }

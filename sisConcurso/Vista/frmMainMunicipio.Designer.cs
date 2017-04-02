@@ -30,15 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.grDatos = new System.Windows.Forms.DataGridView();
+            this.mNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mDescripion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mLogotipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblCantidad = new System.Windows.Forms.Label();
-            this.mNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mDescripion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mLogotipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +63,26 @@
             this.grDatos.Size = new System.Drawing.Size(447, 259);
             this.grDatos.TabIndex = 1;
             // 
+            // mNombre
+            // 
+            this.mNombre.DataPropertyName = "mNombre";
+            this.mNombre.HeaderText = "Nombre";
+            this.mNombre.Name = "mNombre";
+            this.mNombre.Width = 150;
+            // 
+            // mDescripion
+            // 
+            this.mDescripion.DataPropertyName = "mDescripion";
+            this.mDescripion.HeaderText = "Descripcion";
+            this.mDescripion.Name = "mDescripion";
+            this.mDescripion.Width = 150;
+            // 
+            // mLogotipo
+            // 
+            this.mLogotipo.DataPropertyName = "mLogotipo";
+            this.mLogotipo.HeaderText = "Logotipo";
+            this.mLogotipo.Name = "mLogotipo";
+            // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(83, 12);
@@ -79,6 +99,7 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -111,31 +132,11 @@
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(408, 306);
+            this.lblCantidad.Location = new System.Drawing.Point(374, 306);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(51, 20);
+            this.lblCantidad.Size = new System.Drawing.Size(85, 20);
             this.lblCantidad.TabIndex = 7;
-            this.lblCantidad.Text = "label2";
-            // 
-            // mNombre
-            // 
-            this.mNombre.DataPropertyName = "mNombre";
-            this.mNombre.HeaderText = "Nombre";
-            this.mNombre.Name = "mNombre";
-            this.mNombre.Width = 150;
-            // 
-            // mDescripion
-            // 
-            this.mDescripion.DataPropertyName = "mDescripion";
-            this.mDescripion.HeaderText = "Descripcion";
-            this.mDescripion.Name = "mDescripion";
-            this.mDescripion.Width = 150;
-            // 
-            // mLogotipo
-            // 
-            this.mLogotipo.DataPropertyName = "mLogotipo";
-            this.mLogotipo.HeaderText = "Logotipo";
-            this.mLogotipo.Name = "mLogotipo";
+            this.lblCantidad.Text = "Registros: ";
             // 
             // frmMainMunicipio
             // 

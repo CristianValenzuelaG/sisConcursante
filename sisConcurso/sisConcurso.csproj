@@ -100,6 +100,12 @@
     <Compile Include="Vista\frmRegistroCandidata.Designer.cs">
       <DependentUpon>frmRegistroCandidata.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\frmRegistroMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmRegistroMunicipio.Designer.cs">
+      <DependentUpon>frmRegistroMunicipio.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmRegistroCandidata.resx">
       <DependentUpon>frmRegistroCandidata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmRegistroMunicipio.resx">
+      <DependentUpon>frmRegistroMunicipio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
