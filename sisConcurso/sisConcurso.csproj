@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,8 +71,38 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\candidata.cs" />
+    <Compile Include="Modelo\DataModel.cs" />
+    <Compile Include="Modelo\Manager\CandidataManage.cs" />
+    <Compile Include="Modelo\Manager\MunicipioManage.cs" />
+    <Compile Include="Modelo\municipio.cs" />
+    <Compile Include="Modelo\permiso.cs" />
+    <Compile Include="Modelo\permisosnegadosrol.cs" />
+    <Compile Include="Modelo\role.cs" />
+    <Compile Include="Modelo\usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\frmMainCandidata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmMainCandidata.Designer.cs">
+      <DependentUpon>frmMainCandidata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmMainMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmMainMunicipio.Designer.cs">
+      <DependentUpon>frmMainMunicipio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmRegistroCandidata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmRegistroCandidata.Designer.cs">
+      <DependentUpon>frmRegistroCandidata.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -79,7 +111,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vista\frmMainCandidata.resx">
+      <DependentUpon>frmMainCandidata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmMainMunicipio.resx">
+      <DependentUpon>frmMainMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmRegistroCandidata.resx">
+      <DependentUpon>frmRegistroCandidata.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
