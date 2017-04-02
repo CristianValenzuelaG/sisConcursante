@@ -24,11 +24,6 @@ namespace sisConcurso.Vista
             this.Close();
         }
 
-        /// <summary>
-        ///  aqui mandas  a llamar todos los  valores que tienes en los textbox para guardarlos en la base de datos 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             municipio nMunicipio = new municipio();

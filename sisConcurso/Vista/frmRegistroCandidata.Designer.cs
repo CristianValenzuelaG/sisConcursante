@@ -52,6 +52,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpFDN = new System.Windows.Forms.DateTimePicker();
+            this.lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -260,11 +261,21 @@
             this.dtpFDN.Size = new System.Drawing.Size(323, 26);
             this.dtpFDN.TabIndex = 22;
             // 
+            // lbl
+            // 
+            this.lbl.AutoSize = true;
+            this.lbl.Location = new System.Drawing.Point(378, 393);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(24, 20);
+            this.lbl.TabIndex = 24;
+            this.lbl.Text = "lbl";
+            // 
             // frmRegistroCandidata
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 537);
+            this.Controls.Add(this.lbl);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dtpFDN);
             this.Controls.Add(this.label9);
@@ -327,5 +338,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpFDN;
+        private System.Windows.Forms.Label lbl;
     }
 }

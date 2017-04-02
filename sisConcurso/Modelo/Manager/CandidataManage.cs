@@ -9,12 +9,6 @@ namespace sisConcurso.Modelo.Manager
 {
     public class CandidataManage
     {
-        /// <summary>
-        /// para este es para poder buscar el nombre  de la candidata ya que lo busca de la base de datos con el contexto mandas la base de  datos donde el Nombre  que contenga en la base de datos  dependiendo del estatus este activo 
-        /// </summary>
-        /// <param name="valorBuscar"></param>
-        /// <param name="sStatus"></param>
-        /// <returns></returns>
         public static List<candidata> BuscarNombreCandidata(string valorBuscar, Boolean sStatus)
         {
             try
@@ -29,11 +23,6 @@ namespace sisConcurso.Modelo.Manager
                 throw;
             }
         }
-
-        /// <summary>
-        ///    en esta es para poder guardad los datos  de la candidata y tambien poderlos modificar  con el contexto  
-        /// </summary>
-        /// <param name="nCandidata"></param>
         public static void Guarda(candidata nCandidata)
         {
             try
@@ -55,6 +44,61 @@ namespace sisConcurso.Modelo.Manager
             catch (Exception)
             {
 
+                throw;
+            }
+        }
+
+        public static void bajaCandidata(candidata nCandidata)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    if (nCandidata.pkCandidata > 0)
+                    {
+                        ctx.Entry(nCandidata).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        
+                    }
+                    ctx.SaveChanges();
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static candidata BuscarporID(int pkCandidata)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    return ctx.candidatas.Where(r => r.pkCandidata == pkCandidata).FirstOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static List<candidata> BuscarporIDLi(int pkCandidata)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    return ctx.candidatas.Where(r => r.pkCandidata == pkCandidata).ToList();
+                }
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }

@@ -31,17 +31,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.grdDatos = new System.Windows.Forms.DataGridView();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.chkStatus = new System.Windows.Forms.CheckBox();
+            this.pkCandidata = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNombreCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cFDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cCorre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNivelStudio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cRaking = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.chkStatus = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +67,7 @@
             // 
             this.grdDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pkCandidata,
             this.cNombreCom,
             this.cFDN,
             this.cDescripcion,
@@ -74,8 +76,58 @@
             this.cRaking});
             this.grdDatos.Location = new System.Drawing.Point(13, 42);
             this.grdDatos.Name = "grdDatos";
-            this.grdDatos.Size = new System.Drawing.Size(747, 309);
+            this.grdDatos.Size = new System.Drawing.Size(812, 309);
             this.grdDatos.TabIndex = 2;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(12, 404);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 33);
+            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(187, 404);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 33);
+            this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(685, 404);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 33);
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // chkStatus
+            // 
+            this.chkStatus.AutoSize = true;
+            this.chkStatus.Checked = true;
+            this.chkStatus.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkStatus.Location = new System.Drawing.Point(741, 357);
+            this.chkStatus.Name = "chkStatus";
+            this.chkStatus.Size = new System.Drawing.Size(75, 24);
+            this.chkStatus.TabIndex = 7;
+            this.chkStatus.Text = "Status";
+            this.chkStatus.UseVisualStyleBackColor = true;
+            this.chkStatus.CheckedChanged += new System.EventHandler(this.chkStatus_CheckedChanged);
+            // 
+            // pkCandidata
+            // 
+            this.pkCandidata.DataPropertyName = "pkCandidata";
+            this.pkCandidata.HeaderText = "Id";
+            this.pkCandidata.Name = "pkCandidata";
+            this.pkCandidata.Width = 55;
             // 
             // cNombreCom
             // 
@@ -115,66 +167,25 @@
             this.cRaking.HeaderText = "Raking";
             this.cRaking.Name = "cRaking";
             // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(12, 404);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 33);
-            this.btnAgregar.TabIndex = 3;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(93, 404);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(83, 33);
-            this.btnModificar.TabIndex = 4;
+            this.btnModificar.Size = new System.Drawing.Size(88, 33);
+            this.btnModificar.TabIndex = 8;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(182, 404);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 33);
-            this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(685, 404);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 33);
-            this.btnSalir.TabIndex = 6;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // chkStatus
-            // 
-            this.chkStatus.AutoSize = true;
-            this.chkStatus.Checked = true;
-            this.chkStatus.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkStatus.Location = new System.Drawing.Point(685, 357);
-            this.chkStatus.Name = "chkStatus";
-            this.chkStatus.Size = new System.Drawing.Size(75, 24);
-            this.chkStatus.TabIndex = 7;
-            this.chkStatus.Text = "Status";
-            this.chkStatus.UseVisualStyleBackColor = true;
-            this.chkStatus.CheckedChanged += new System.EventHandler(this.chkStatus_CheckedChanged);
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // frmMainCandidata
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 449);
+            this.ClientSize = new System.Drawing.Size(828, 449);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.chkStatus);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.grdDatos);
             this.Controls.Add(this.txtNombre);
@@ -196,15 +207,16 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.DataGridView grdDatos;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.CheckBox chkStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pkCandidata;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNombreCom;
         private System.Windows.Forms.DataGridViewTextBoxColumn cFDN;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn cCorre;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNivelStudio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cRaking;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
