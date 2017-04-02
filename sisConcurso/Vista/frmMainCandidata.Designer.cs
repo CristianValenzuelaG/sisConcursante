@@ -31,17 +31,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.grdDatos = new System.Windows.Forms.DataGridView();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.chkStatus = new System.Windows.Forms.CheckBox();
+            this.pkCandidata = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNombreCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cFDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cCorre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNivelStudio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cRaking = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.chkStatus = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +67,7 @@
             // 
             this.grdDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pkCandidata,
             this.cNombreCom,
             this.cFDN,
             this.cDescripcion,
@@ -74,46 +76,9 @@
             this.cRaking});
             this.grdDatos.Location = new System.Drawing.Point(13, 42);
             this.grdDatos.Name = "grdDatos";
-            this.grdDatos.Size = new System.Drawing.Size(747, 309);
+            this.grdDatos.Size = new System.Drawing.Size(812, 309);
             this.grdDatos.TabIndex = 2;
-            // 
-            // cNombreCom
-            // 
-            this.cNombreCom.DataPropertyName = "cNombreCom";
-            this.cNombreCom.HeaderText = "Nombre Completo";
-            this.cNombreCom.Name = "cNombreCom";
-            this.cNombreCom.Width = 150;
-            // 
-            // cFDN
-            // 
-            this.cFDN.DataPropertyName = "cFDN";
-            this.cFDN.HeaderText = "Fecha Nacimiento";
-            this.cFDN.Name = "cFDN";
-            // 
-            // cDescripcion
-            // 
-            this.cDescripcion.DataPropertyName = "cDescripcion";
-            this.cDescripcion.HeaderText = "Descripcion";
-            this.cDescripcion.Name = "cDescripcion";
-            this.cDescripcion.Width = 150;
-            // 
-            // cCorre
-            // 
-            this.cCorre.DataPropertyName = "cCorre";
-            this.cCorre.HeaderText = "Correo";
-            this.cCorre.Name = "cCorre";
-            // 
-            // cNivelStudio
-            // 
-            this.cNivelStudio.DataPropertyName = "cNivelStudio";
-            this.cNivelStudio.HeaderText = "Nivel Studio";
-            this.cNivelStudio.Name = "cNivelStudio";
-            // 
-            // cRaking
-            // 
-            this.cRaking.DataPropertyName = "cRaking";
-            this.cRaking.HeaderText = "Raking";
-            this.cRaking.Name = "cRaking";
+            this.grdDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDatos_CellDoubleClick);
             // 
             // btnAgregar
             // 
@@ -166,11 +131,56 @@
             this.chkStatus.UseVisualStyleBackColor = true;
             this.chkStatus.CheckedChanged += new System.EventHandler(this.chkStatus_CheckedChanged);
             // 
+            // pkCandidata
+            // 
+            this.pkCandidata.DataPropertyName = "pkCandidata";
+            this.pkCandidata.HeaderText = "Id";
+            this.pkCandidata.Name = "pkCandidata";
+            this.pkCandidata.Width = 55;
+            // 
+            // cNombreCom
+            // 
+            this.cNombreCom.DataPropertyName = "cNombreCom";
+            this.cNombreCom.HeaderText = "Nombre Completo";
+            this.cNombreCom.Name = "cNombreCom";
+            this.cNombreCom.Width = 150;
+            // 
+            // cFDN
+            // 
+            this.cFDN.DataPropertyName = "cFDN";
+            this.cFDN.HeaderText = "Fecha Nacimiento";
+            this.cFDN.Name = "cFDN";
+            // 
+            // cDescripcion
+            // 
+            this.cDescripcion.DataPropertyName = "cDescripcion";
+            this.cDescripcion.HeaderText = "Descripcion";
+            this.cDescripcion.Name = "cDescripcion";
+            this.cDescripcion.Width = 150;
+            // 
+            // cCorre
+            // 
+            this.cCorre.DataPropertyName = "cCorre";
+            this.cCorre.HeaderText = "Correo";
+            this.cCorre.Name = "cCorre";
+            // 
+            // cNivelStudio
+            // 
+            this.cNivelStudio.DataPropertyName = "cNivelStudio";
+            this.cNivelStudio.HeaderText = "Nivel Studio";
+            this.cNivelStudio.Name = "cNivelStudio";
+            // 
+            // cRaking
+            // 
+            this.cRaking.DataPropertyName = "cRaking";
+            this.cRaking.HeaderText = "Raking";
+            this.cRaking.Name = "cRaking";
+            // 
             // frmMainCandidata
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 449);
+            this.ClientSize = new System.Drawing.Size(828, 449);
             this.Controls.Add(this.chkStatus);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
@@ -200,6 +210,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.CheckBox chkStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pkCandidata;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNombreCom;
         private System.Windows.Forms.DataGridViewTextBoxColumn cFDN;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDescripcion;

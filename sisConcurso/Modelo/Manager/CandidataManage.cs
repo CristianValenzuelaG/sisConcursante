@@ -47,5 +47,35 @@ namespace sisConcurso.Modelo.Manager
                 throw;
             }
         }
+
+        public static candidata BuscarporID(int pkCandidata)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    return ctx.candidatas.Where(r => r.pkCandidata == pkCandidata).FirstOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static List<candidata> BuscarporIDLi(int pkCandidata)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    return ctx.candidatas.Where(r => r.pkCandidata == pkCandidata).ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

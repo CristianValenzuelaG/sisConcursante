@@ -14,6 +14,12 @@ namespace sisConcurso.Vista
 {
     public partial class frmRegistroCandidata : Form
     {
+        public static int iD_Buscar = 0;
+        public static int MODIFICAR = 0;
+        public static Boolean VALIDAR = true;
+        public static Boolean VALIDARCandidata = true;
+        List<candidata> nCandidatas = new List<candidata>();
+        frmMainCandidata mCandidata;//modificar
         public void CargarMunicipio()//cargar el combobox
         {
             this.cmbMunicipio.DataSource = MunicipioManage.llenarcombo();
@@ -22,7 +28,28 @@ namespace sisConcurso.Vista
         }
         public frmRegistroCandidata()
         {
+            VALIDAR = true;
             InitializeComponent();
+
+
+        }
+        public frmRegistroCandidata(frmMainCandidata mcandidata)
+        {
+            InitializeComponent();
+            mCandidata = mcandidata;//modificar
+            VALIDAR = false;
+            VALIDARCandidata = true;
+
+            candidata nCandidata = CandidataManage.BuscarporID(frmMainCandidata.idCon);
+                txtNombre.Text = nCandidata.cNombreCom;
+                txtCorreo.Text = nCandidata.cCorre;
+                dtpAño.Value = nCandidata.cAnoComvoca;
+                txtCurp.Text = nCandidata.cCurp;
+                txtDescripcion.Text = nCandidata.cDescripcion;
+                txtEstudio.Text = nCandidata.cNivelStudio;
+                dtpFDN.Value = nCandidata.cFDN;
+                cmbMunicipio.SelectedValue = nCandidata.fkMunicipio;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
