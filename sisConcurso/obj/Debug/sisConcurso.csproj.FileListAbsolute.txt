@@ -17,3 +17,23 @@ C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\obj\Debug\si
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\obj\Debug\sisConcurso.Vista.frmMainMunicipio.resources
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\obj\Debug\sisConcurso.Vista.frmRegistroCandidata.resources
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\obj\Debug\sisConcurso.Vista.frmRegistroMunicipio.resources
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\bin\Debug\sisConcurso.exe.config
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\obj\Debug\sisConcurso.exe
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\obj\Debug\sisConcurso.pdb
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\bin\Debug\sisConcurso.exe
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\bin\Debug\sisConcurso.pdb
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\bin\Debug\EntityFramework.dll
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\bin\Debug\MySql.Data.dll
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\bin\Debug\EntityFramework.xml
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\obj\Debug\sisConcurso.csprojResolveAssemblyReference.cache
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\obj\Debug\sisConcurso.Form1.resources
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\obj\Debug\sisConcurso.Properties.Resources.resources
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\obj\Debug\sisConcurso.Vista.frmEliminarCandidata.resources
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\obj\Debug\sisConcurso.Vista.frmMainCandidata.resources
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\obj\Debug\sisConcurso.Vista.frmMainMunicipio.resources
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\obj\Debug\sisConcurso.Vista.frmRegistroCandidata.resources
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\obj\Debug\sisConcurso.Vista.frmRegistroMunicipio.resources
+C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\obj\Debug\sisConcurso.csproj.GenerateResource.Cache

@@ -75,11 +75,16 @@ namespace sisConcurso.Vista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
-            //candidata deli = new candidata();
-            //deli.(Convert.ToInt32(this.dgvCatalogoUsuario.CurrentRow.Cells["pkUsuario"].Value));
-
-            //CargarCandidata(txtNombre.Text);
+            if (grdDatos.SelectedCells.Count > 0)
+            {
+                idCon = Convert.ToInt32(this.grdDatos.CurrentRow.Cells["pkCandidata"].Value);
+                frmEliminarCandidata f = new frmEliminarCandidata(this);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay elementos");
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
