@@ -17,9 +17,12 @@ namespace sisConcurso.Vista
         frmMainCandidata mCandidata;//modificar
         private int pk;
         private string rakin;
+        private int idlugar;
+        private int idusuario;
         public frmEliminarCandidata(frmMainCandidata mcandidata)
         {
             InitializeComponent();
+            mCandidata = mcandidata;
             candidata nCandidata = CandidataManage.BuscarporID(frmMainCandidata.idCon);
             pk = nCandidata.pkCandidata;
             txtNombre.Text = nCandidata.cNombreCom;
@@ -29,8 +32,9 @@ namespace sisConcurso.Vista
             txtDescripcion.Text = nCandidata.cDescripcion;
             txtEstudio.Text = nCandidata.cNivelStudio;
             dtpFDN.Value = nCandidata.cFDN;
-            cmbMunicipio.SelectedValue = nCandidata.fkMunicipio;
+            idlugar = Convert.ToInt32(nCandidata.fkMunicipio);
             rakin = nCandidata.cRaking.ToString();
+            idusuario = Convert.ToInt32(nCandidata.fkUsuario);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -47,13 +51,22 @@ namespace sisConcurso.Vista
                 nCandidata.cNivelStudio = txtEstudio.Text;
                 nCandidata.cFDN = dtpFDN.Value.Date;
                 nCandidata.cRaking = Convert.ToInt32(rakin);
-                
+                nCandidata.fkMunicipio = idlugar;
+                nCandidata.fkUsuario = idusuario;
+
                 nCandidata.cStatus = false;
+                CandidataManage.bajaCandidata(nCandidata);
+                mCandidata.CargarCandidata();
             }
             else
             {
             }
-            CandidataManage.Guarda(nCandidata);
+            
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

@@ -14,14 +14,16 @@ namespace sisConcurso.Vista
 {
     public partial class frmMainMunicipio : Form
     {
-        public void CargarMunicipio(string Nombre)
+        public static int idMun;
+        public void CargarMunicipio()
         {
             List<municipio> nLista = new List<municipio>();
-            foreach (var item in MunicipioManage.BuscarporMunicipio(Nombre))
+            foreach (var item in MunicipioManage.BuscarporMunicipio(txtNombre.Text))
             {
                 nLista.Add(item);
             }
             this.grDatos.DataSource = nLista;
+            lblCantidad.Text = "Registros: " + grDatos.Rows.Count.ToString();
         }
         public frmMainMunicipio()
         {
@@ -36,19 +38,57 @@ namespace sisConcurso.Vista
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            CargarMunicipio(txtNombre.Text);
+            CargarMunicipio();
         }
 
         private void frmMainMunicipio_Load(object sender, EventArgs e)
         {
-            CargarMunicipio(txtNombre.Text);
-            lblCantidad.Text ="Registros: "+ grDatos.Rows.Count.ToString();
+            CargarMunicipio();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmRegistroMunicipio nMuni = new frmRegistroMunicipio();
             nMuni.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (grDatos.SelectedCells.Count > 0)
+            {
+                idMun = Convert.ToInt32(this.grDatos.CurrentRow.Cells["pkMunicipio"].Value);
+                frmRegistroMunicipio f = new frmRegistroMunicipio(this);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay elementos");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult me = MessageBox.Show("Esta a punto de borra un municipio esta segur@ que quiere hacerlo ? ",
+                "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (me == DialogResult.OK)
+            {
+                if (grDatos.SelectedCells.Count > 0)
+                {
+                    MunicipioManage deli = new MunicipioManage();
+                    deli.eliminar(Convert.ToInt32(this.grDatos.CurrentRow.Cells["pkMunicipio"].Value));
+                }
+                else
+                {
+                    MessageBox.Show("Error no a seleccionado ningun municipio", "Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                
+            }
+            this.CargarMunicipio();
+
         }
     }
 }

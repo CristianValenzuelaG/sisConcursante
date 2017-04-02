@@ -67,5 +67,38 @@ namespace sisConcurso.Modelo.Manager
                 throw;
             }
         }
+
+        public static municipio BuscarporIDM(int pkMunicipio)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    return ctx.municipios.Where(r => r.pkMunicipio == pkMunicipio).FirstOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void eliminar(int pkMunicipio)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    municipio muni = ctx.municipios.Single(r => r.pkMunicipio == pkMunicipio);
+                    ctx.Entry(muni).State = EntityState.Deleted;
+                    ctx.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

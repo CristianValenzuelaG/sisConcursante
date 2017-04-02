@@ -30,15 +30,16 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.grDatos = new System.Windows.Forms.DataGridView();
-            this.mNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mDescripion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mLogotipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblCantidad = new System.Windows.Forms.Label();
+            this.pkMunicipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mDescripion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mLogotipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,33 +56,14 @@
             // 
             this.grDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pkMunicipio,
             this.mNombre,
             this.mDescripion,
             this.mLogotipo});
             this.grDatos.Location = new System.Drawing.Point(12, 44);
             this.grDatos.Name = "grDatos";
-            this.grDatos.Size = new System.Drawing.Size(447, 259);
+            this.grDatos.Size = new System.Drawing.Size(530, 259);
             this.grDatos.TabIndex = 1;
-            // 
-            // mNombre
-            // 
-            this.mNombre.DataPropertyName = "mNombre";
-            this.mNombre.HeaderText = "Nombre";
-            this.mNombre.Name = "mNombre";
-            this.mNombre.Width = 150;
-            // 
-            // mDescripion
-            // 
-            this.mDescripion.DataPropertyName = "mDescripion";
-            this.mDescripion.HeaderText = "Descripcion";
-            this.mDescripion.Name = "mDescripion";
-            this.mDescripion.Width = 150;
-            // 
-            // mLogotipo
-            // 
-            this.mLogotipo.DataPropertyName = "mLogotipo";
-            this.mLogotipo.HeaderText = "Logotipo";
-            this.mLogotipo.Name = "mLogotipo";
             // 
             // txtNombre
             // 
@@ -109,6 +91,7 @@
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -118,10 +101,11 @@
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(384, 355);
+            this.btnSalir.Location = new System.Drawing.Point(467, 355);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 35);
             this.btnSalir.TabIndex = 6;
@@ -132,17 +116,45 @@
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(374, 306);
+            this.lblCantidad.Location = new System.Drawing.Point(441, 306);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(85, 20);
             this.lblCantidad.TabIndex = 7;
             this.lblCantidad.Text = "Registros: ";
             // 
+            // pkMunicipio
+            // 
+            this.pkMunicipio.DataPropertyName = "pkMunicipio";
+            this.pkMunicipio.HeaderText = "Id";
+            this.pkMunicipio.Name = "pkMunicipio";
+            this.pkMunicipio.Width = 55;
+            // 
+            // mNombre
+            // 
+            this.mNombre.DataPropertyName = "mNombre";
+            this.mNombre.HeaderText = "Nombre";
+            this.mNombre.Name = "mNombre";
+            this.mNombre.Width = 150;
+            // 
+            // mDescripion
+            // 
+            this.mDescripion.DataPropertyName = "mDescripion";
+            this.mDescripion.HeaderText = "Descripcion";
+            this.mDescripion.Name = "mDescripion";
+            this.mDescripion.Width = 150;
+            // 
+            // mLogotipo
+            // 
+            this.mLogotipo.DataPropertyName = "mLogotipo";
+            this.mLogotipo.HeaderText = "Logotipo";
+            this.mLogotipo.Name = "mLogotipo";
+            this.mLogotipo.Width = 130;
+            // 
             // frmMainMunicipio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 402);
+            this.ClientSize = new System.Drawing.Size(554, 402);
             this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
@@ -172,6 +184,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label lblCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pkMunicipio;
         private System.Windows.Forms.DataGridViewTextBoxColumn mNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn mDescripion;
         private System.Windows.Forms.DataGridViewTextBoxColumn mLogotipo;

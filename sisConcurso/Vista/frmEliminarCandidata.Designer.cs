@@ -35,8 +35,6 @@
             this.picFoto = new System.Windows.Forms.PictureBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbMunicipio = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtEstudio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCurp = new System.Windows.Forms.TextBox();
@@ -115,28 +113,10 @@
             this.label7.TabIndex = 38;
             this.label7.Text = "Descripción";
             // 
-            // cmbMunicipio
-            // 
-            this.cmbMunicipio.Enabled = false;
-            this.cmbMunicipio.FormattingEnabled = true;
-            this.cmbMunicipio.Location = new System.Drawing.Point(99, 186);
-            this.cmbMunicipio.Name = "cmbMunicipio";
-            this.cmbMunicipio.Size = new System.Drawing.Size(234, 28);
-            this.cmbMunicipio.TabIndex = 37;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 189);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 20);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Municipio";
-            // 
             // txtEstudio
             // 
             this.txtEstudio.Enabled = false;
-            this.txtEstudio.Location = new System.Drawing.Point(408, 188);
+            this.txtEstudio.Location = new System.Drawing.Point(87, 188);
             this.txtEstudio.Name = "txtEstudio";
             this.txtEstudio.Size = new System.Drawing.Size(323, 26);
             this.txtEstudio.TabIndex = 35;
@@ -144,7 +124,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(339, 191);
+            this.label5.Location = new System.Drawing.Point(18, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 20);
             this.label5.TabIndex = 34;
@@ -217,6 +197,7 @@
             this.btnCancelar.TabIndex = 26;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEliminar
             // 
@@ -240,8 +221,6 @@
             this.Controls.Add(this.picFoto);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.cmbMunicipio);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtEstudio);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCurp);
@@ -273,8 +252,6 @@
         private System.Windows.Forms.PictureBox picFoto;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbMunicipio;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtEstudio;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCurp;

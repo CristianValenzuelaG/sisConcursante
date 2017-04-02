@@ -20,6 +20,9 @@ namespace sisConcurso.Vista
         public static Boolean VALIDARCandidata = true;
         frmMainCandidata mCandidata;//modificar
         private int pk;
+        private int rakin;
+        private int idlugar;
+        private int idusuario;
 
         public void CargarMunicipio()//cargar el combobox
         {
@@ -42,15 +45,17 @@ namespace sisConcurso.Vista
             VALIDARCandidata = true;
 
             candidata nCandidata = CandidataManage.BuscarporID(frmMainCandidata.idCon);
-                pk = nCandidata.pkCandidata;
-                txtNombre.Text = nCandidata.cNombreCom;
-                txtCorreo.Text = nCandidata.cCorre;
-                dtpAño.Value = nCandidata.cAnoComvoca;
-                txtCurp.Text = nCandidata.cCurp;
-                txtDescripcion.Text = nCandidata.cDescripcion;
-                txtEstudio.Text = nCandidata.cNivelStudio;
-                dtpFDN.Value = nCandidata.cFDN;
-                cmbMunicipio.SelectedValue = nCandidata.fkMunicipio;
+            pk = nCandidata.pkCandidata;
+            txtNombre.Text = nCandidata.cNombreCom;
+            txtCorreo.Text = nCandidata.cCorre;
+            dtpAño.Value = nCandidata.cAnoComvoca;
+            txtCurp.Text = nCandidata.cCurp;
+            txtDescripcion.Text = nCandidata.cDescripcion;
+            txtEstudio.Text = nCandidata.cNivelStudio;
+            dtpFDN.Value = nCandidata.cFDN;
+            idlugar = Convert.ToInt32(nCandidata.fkMunicipio);
+            rakin = Convert.ToInt32(nCandidata.cRaking);
+            idusuario = Convert.ToInt32(nCandidata.fkUsuario); 
             
         }
 
@@ -73,7 +78,11 @@ namespace sisConcurso.Vista
                 nCandidata.cDescripcion = txtDescripcion.Text;
                 nCandidata.cNivelStudio = txtEstudio.Text;
                 nCandidata.cFDN = dtpFDN.Value.Date;
+                nCandidata.cRaking = Convert.ToInt32(rakin);
                 nCandidata.fkMunicipio = Convert.ToInt32(cmbMunicipio.SelectedValue);
+                nCandidata.fkUsuario = idusuario;
+                CandidataManage.Guarda(nCandidata);
+                mCandidata.CargarCandidata();
             }
             else
             {
@@ -86,10 +95,11 @@ namespace sisConcurso.Vista
                 nCandidata.cNivelStudio = txtEstudio.Text;
                 nCandidata.cFDN = dtpFDN.Value.Date;
                 nCandidata.fkMunicipio = Convert.ToInt32(cmbMunicipio.SelectedValue);
-                
+                nCandidata.cRaking = 1;
+                CandidataManage.Guarda(nCandidata);
             }
-            CandidataManage.Guarda(nCandidata);
-            mCandidata.CargarCandidata();
+            
+
             this.Close();
 
 
