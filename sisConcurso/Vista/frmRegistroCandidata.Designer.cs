@@ -206,6 +206,7 @@
             this.btnTomar.TabIndex = 17;
             this.btnTomar.Text = "Tomar Foto";
             this.btnTomar.UseVisualStyleBackColor = true;
+            this.btnTomar.Click += new System.EventHandler(this.btnTomar_Click);
             // 
             // cmbDispositivo
             // 

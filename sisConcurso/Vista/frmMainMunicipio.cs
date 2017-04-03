@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using sisConcurso.Modelo;
-using sisConcurso.Modelo.Manager;
+using AForge.Video.DirectShow;
+using HerramientasData.Modelo;
+using sisConcurso.Manager;
 
 namespace sisConcurso.Vista
 {
@@ -44,6 +45,7 @@ namespace sisConcurso.Vista
         private void frmMainMunicipio_Load(object sender, EventArgs e)
         {
             CargarMunicipio();
+           
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using sisConcurso.Modelo;
-using sisConcurso.Modelo.Manager;
+using HerramientasData.Modelo;
+using sisConcurso.Manager;
+
 
 namespace sisConcurso.Vista
 {

@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\SiSCar\SiSCar\bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="aforge.video.directshow">
+      <HintPath>..\..\SiSCar\SiSCar\bin\Debug\aforge.video.directshow.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -71,15 +77,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\candidata.cs" />
-    <Compile Include="Modelo\DataModel.cs" />
-    <Compile Include="Modelo\Manager\CandidataManage.cs" />
-    <Compile Include="Modelo\Manager\MunicipioManage.cs" />
-    <Compile Include="Modelo\municipio.cs" />
-    <Compile Include="Modelo\permiso.cs" />
-    <Compile Include="Modelo\permisosnegadosrol.cs" />
-    <Compile Include="Modelo\role.cs" />
-    <Compile Include="Modelo\usuario.cs" />
+    <Compile Include="Manager\CandidataManage.cs" />
+    <Compile Include="Manager\MunicipioManage.cs" />
+    <Compile Include="Manager\ToolImagen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\frmEliminarCandidata.cs">
@@ -99,6 +99,12 @@
     </Compile>
     <Compile Include="Vista\frmMainMunicipio.Designer.cs">
       <DependentUpon>frmMainMunicipio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmMainUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmMainUsuario.Designer.cs">
+      <DependentUpon>frmMainUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\frmRegistroCandidata.cs">
       <SubType>Form</SubType>
@@ -152,10 +158,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HerramientasData\HerramientasData.csproj">
+      <Project>{9ef7fb61-f92d-42bb-bd30-00cd6f6a8c4f}</Project>
+      <Name>HerramientasData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

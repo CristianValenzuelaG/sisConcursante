@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Concursantes";
+    List<HerramientasData.Modelo.candidata> Datos = ViewBag.Datos;
+    string Valor = ViewBag.txtValor;
+}
+<br/>
+<br/>
+<div class="row ">
+
+
+
+
+    <div class="col s12 m7">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            <div class="form-group">
+                <label class="control-label col-xs-3">Apellidos</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" value="@Valor" placeholder="Filtrar por apellido" name="txtValor">
+
+                </div>
+                <div class="col-xs-1">
+                    <input type="submit" class="btn btn-primary" value="Filtrar" />
+                </div>
+            </div>
+        }
+        @foreach (HerramientasData.Modelo.candidata item in Datos)
+        {
+            <div class="card">
+                <div class="card-image">
+                    <img class="activator" src=""/>
+                    <span class="card-title">@item.cNombreCom</span>
+                </div>
+                <div class="card-content">
+                    <p>@item.cDescripcion</p>
+                </div>
+                <div class="card-action">
+                    <div class="center-align">
+                        <a class="white-text waves-effect waves-light btn" href="#">Like (@item.cRaking)</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<h2>Index</h2>
+
