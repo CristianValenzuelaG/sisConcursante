@@ -14,12 +14,9 @@ namespace sisConcurso.Vista
 {
     public partial class frmRegistroCandidata : Form
     {
-        public static int iD_Buscar = 0;
-        public static int MODIFICAR = 0;
-        public static Boolean VALIDAR = true;
-        public static Boolean VALIDARCandidata = true;
-        List<candidata> nCandidatas = new List<candidata>();
-        frmMainCandidata mCandidata;//modificar
+        /// <summary>
+        /// para este  te  ayuda a que cuando agregues el combo este con los datos de los con los municipios que ya esten en la base e datos 
+        /// </summary>
         public void CargarMunicipio()//cargar el combobox
         {
             this.cmbMunicipio.DataSource = MunicipioManage.llenarcombo();
@@ -28,28 +25,7 @@ namespace sisConcurso.Vista
         }
         public frmRegistroCandidata()
         {
-            VALIDAR = true;
             InitializeComponent();
-
-
-        }
-        public frmRegistroCandidata(frmMainCandidata mcandidata)
-        {
-            InitializeComponent();
-            mCandidata = mcandidata;//modificar
-            VALIDAR = false;
-            VALIDARCandidata = true;
-
-            candidata nCandidata = CandidataManage.BuscarporID(frmMainCandidata.idCon);
-                txtNombre.Text = nCandidata.cNombreCom;
-                txtCorreo.Text = nCandidata.cCorre;
-                dtpAño.Value = nCandidata.cAnoComvoca;
-                txtCurp.Text = nCandidata.cCurp;
-                txtDescripcion.Text = nCandidata.cDescripcion;
-                txtEstudio.Text = nCandidata.cNivelStudio;
-                dtpFDN.Value = nCandidata.cFDN;
-                cmbMunicipio.SelectedValue = nCandidata.fkMunicipio;
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -57,6 +33,11 @@ namespace sisConcurso.Vista
             this.Close();
         }
 
+        /// <summary>
+        /// aqui mandas los datos que esten en  los campos del form para que los mandes a guardar 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             candidata nCandidata = new candidata();
@@ -74,6 +55,11 @@ namespace sisConcurso.Vista
 
         }
 
+        /// <summary>
+        /// en este  es para que en el momento    en el     que cargue  el romulario se   cargue el combo con todos los municipios 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmRegistroCandidata_Load(object sender, EventArgs e)
         {
             this.CargarMunicipio();

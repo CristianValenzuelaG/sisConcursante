@@ -10,7 +10,11 @@ namespace sisConcurso.Modelo.Manager
 {
     class MunicipioManage
     {
-
+        /// <summary>
+        /// este es el metodo para poder buscar el municipio donde en la tabla municipio buscar el nombre de cada lista 
+        /// </summary>
+        /// <param name="valorBuscar"></param>
+        /// <returns></returns>
         public static List<municipio> BuscarporMunicipio(string valorBuscar)
         {
             try
@@ -26,6 +30,10 @@ namespace sisConcurso.Modelo.Manager
             }
         }
 
+        /// <summary>
+        /// para este metodo es para poder agregar el municipio y poder modificarlo
+        /// </summary>
+        /// <param name="nMunicipio"></param>
         public static void Guarda(municipio nMunicipio)
         {
             try
@@ -51,7 +59,11 @@ namespace sisConcurso.Modelo.Manager
             }
         }
 
-        public static List<municipio> llenarcombo() // cargar datos de la base de datos 
+        /// <summary>
+        /// este  es para poder  cargar datos de la base de datos y que se cargue el combo con cada municipio  
+        /// /// </summary>
+        /// <returns></returns>
+        public static List<municipio> llenarcombo() 
         {
             try
             {
