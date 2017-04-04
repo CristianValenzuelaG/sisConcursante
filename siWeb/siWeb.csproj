@@ -143,7 +143,9 @@
     <Content Include="Assens\js\jquery.js" />
     <Content Include="Assens\js\npm.js" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -183,10 +185,17 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HerramientasData\HerramientasData.csproj">
-      <Project>{9ef7fb61-f92d-42bb-bd30-00cd6f6a8c4f}</Project>
-      <Name>HerramientasData</Name>
+    <ProjectReference Include="..\HerramientasDatas\HerramientasDatas.csproj">
+      <Project>{87d1af5d-5abd-48c8-aebd-5bee909731e9}</Project>
+      <Name>HerramientasDatas</Name>
     </ProjectReference>
+    <ProjectReference Include="..\sisConcurso\sisConcurso.csproj">
+      <Project>{47b2a6b6-3240-4058-89fa-59310ce7977f}</Project>
+      <Name>sisConcurso</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

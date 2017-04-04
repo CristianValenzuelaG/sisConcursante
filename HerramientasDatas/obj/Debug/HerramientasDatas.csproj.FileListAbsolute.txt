@@ -1,0 +1,12 @@
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\HerramientasDatas\bin\Debug\HerramientasDatas.dll.config
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\HerramientasDatas\bin\Debug\HerramientasDatas.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\HerramientasDatas\bin\Debug\HerramientasDatas.pdb
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\HerramientasDatas\bin\Debug\EntityFramework.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\HerramientasDatas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\HerramientasDatas\bin\Debug\MySql.Data.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\HerramientasDatas\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\HerramientasDatas\bin\Debug\EntityFramework.xml
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\HerramientasDatas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\HerramientasDatas\obj\Debug\HerramientasDatas.csprojResolveAssemblyReference.cache
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\HerramientasDatas\obj\Debug\HerramientasDatas.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\HerramientasDatas\obj\Debug\HerramientasDatas.pdb

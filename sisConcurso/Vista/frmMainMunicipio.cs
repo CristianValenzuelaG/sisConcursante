@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video.DirectShow;
-using HerramientasData.Modelo;
+using HerramientasDatas.Modelo;
 using sisConcurso.Manager;
 
 namespace sisConcurso.Vista

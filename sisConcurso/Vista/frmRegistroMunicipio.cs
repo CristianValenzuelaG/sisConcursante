@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
-using HerramientasData.Modelo;
+using HerramientasDatas.Modelo;
 using sisConcurso.Manager;
 namespace sisConcurso.Vista
 {
@@ -46,6 +46,7 @@ namespace sisConcurso.Vista
             pk = nMunicipio.pkMunicipio;
             txtNombre.Text = nMunicipio.mNombre;
             txtDescripcion.Text = nMunicipio.mDescripion;
+            picCamara.Image = ToolImagen.Base64StringToBitmap(nMunicipio.mLogotipo);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -61,6 +62,7 @@ namespace sisConcurso.Vista
                 nMunicipio.pkMunicipio = pk;
                 nMunicipio.mNombre = txtNombre.Text;
                 nMunicipio.mDescripion = txtDescripcion.Text;
+                nMunicipio.mLogotipo = ImagenString;
 
 
                 MunicipioManage.Guarda(nMunicipio);
@@ -80,39 +82,13 @@ namespace sisConcurso.Vista
 
         private void frmRegistroMunicipio_Load(object sender, EventArgs e)
         {
-            videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-
-            foreach (FilterInfo device in videoDevices)
-            {
-                cmbDispositivo.Items.Add(device.Name);
-            }
-            if (cmbDispositivo.Items.Count > 0)
-            {
-                cmbDispositivo.SelectedIndex = 0;
-                videoSource = new VideoCaptureDevice();
-            }
-            else
-            { 
-                btnTomar.Enabled = false;
-            }
+            
         }
 
 
         //Para la fotografia
-        private void videoSource_newFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            ImagenBitmap = (Bitmap)eventArgs.Frame.Clone();
-            ImagenString = ToolImagen.ToBase64String(ImagenBitmap, ImageFormat.Jpeg);
-            picCamara.Image = ImagenBitmap;
-        }
-
-        public void FinalizarControles()
-        {
-            if (videoSource.IsRunning)
-            {
-                videoSource.Stop();
-            }
-        }
+       
+     
         public void PonerFotografia(String pathImagen)
         {
             ImagenBitmap = new System.Drawing.Bitmap(pathImagen);
@@ -122,18 +98,25 @@ namespace sisConcurso.Vista
 
         private void btnTomar_Click(object sender, EventArgs e)
         {
-            if (videoSource.IsRunning)
+            try
             {
-                videoSource.Stop();
-                //this.picImagen.Image = null;
-                this.picCamara.Image = ImagenBitmap;
-                picCamara.Invalidate();
+                OpenFileDialog BuscarImagen = new OpenFileDialog();
+                BuscarImagen.Filter = "Archivos de Imagen|*.jpg;*.png;*gif;*.bmp";
+                //Aquí incluiremos los filtros que queramos.
+                BuscarImagen.FileName = "";
+                BuscarImagen.Title = "Seleccione una imagen";
+                if (BuscarImagen.ShowDialog() == DialogResult.OK)
+                {
+                    string logo = BuscarImagen.FileName;
+                    this.picCamara.ImageLocation = logo;
+                    ImagenBitmap = new System.Drawing.Bitmap(logo);
+                    ImagenString = ToolImagen.ToBase64String(ImagenBitmap, ImageFormat.Jpeg);
+                    picCamara.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                videoSource = new VideoCaptureDevice(videoDevices[cmbDispositivo.SelectedIndex].MonikerString);
-                videoSource.NewFrame += new NewFrameEventHandler(videoSource_newFrame);
-                videoSource.Start();
+                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido" + ex.Message);
             }
         }
     }

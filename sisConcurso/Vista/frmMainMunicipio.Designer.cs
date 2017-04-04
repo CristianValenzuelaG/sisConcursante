@@ -30,16 +30,16 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.grDatos = new System.Windows.Forms.DataGridView();
+            this.pkMunicipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mDescripion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mLogotipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblCantidad = new System.Windows.Forms.Label();
-            this.pkMunicipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mDescripion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mLogotipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +64,34 @@
             this.grDatos.Name = "grDatos";
             this.grDatos.Size = new System.Drawing.Size(530, 259);
             this.grDatos.TabIndex = 1;
+            // 
+            // pkMunicipio
+            // 
+            this.pkMunicipio.DataPropertyName = "pkMunicipio";
+            this.pkMunicipio.HeaderText = "Id";
+            this.pkMunicipio.Name = "pkMunicipio";
+            this.pkMunicipio.Width = 55;
+            // 
+            // mNombre
+            // 
+            this.mNombre.DataPropertyName = "mNombre";
+            this.mNombre.HeaderText = "Nombre";
+            this.mNombre.Name = "mNombre";
+            this.mNombre.Width = 150;
+            // 
+            // mDescripion
+            // 
+            this.mDescripion.DataPropertyName = "mDescripion";
+            this.mDescripion.HeaderText = "Descripcion";
+            this.mDescripion.Name = "mDescripion";
+            this.mDescripion.Width = 150;
+            // 
+            // mLogotipo
+            // 
+            this.mLogotipo.DataPropertyName = "mLogotipo";
+            this.mLogotipo.HeaderText = "Logotipo";
+            this.mLogotipo.Name = "mLogotipo";
+            this.mLogotipo.Width = 130;
             // 
             // txtNombre
             // 
@@ -122,34 +150,6 @@
             this.lblCantidad.TabIndex = 7;
             this.lblCantidad.Text = "Registros: ";
             // 
-            // pkMunicipio
-            // 
-            this.pkMunicipio.DataPropertyName = "pkMunicipio";
-            this.pkMunicipio.HeaderText = "Id";
-            this.pkMunicipio.Name = "pkMunicipio";
-            this.pkMunicipio.Width = 55;
-            // 
-            // mNombre
-            // 
-            this.mNombre.DataPropertyName = "mNombre";
-            this.mNombre.HeaderText = "Nombre";
-            this.mNombre.Name = "mNombre";
-            this.mNombre.Width = 150;
-            // 
-            // mDescripion
-            // 
-            this.mDescripion.DataPropertyName = "mDescripion";
-            this.mDescripion.HeaderText = "Descripcion";
-            this.mDescripion.Name = "mDescripion";
-            this.mDescripion.Width = 150;
-            // 
-            // mLogotipo
-            // 
-            this.mLogotipo.DataPropertyName = "mLogotipo";
-            this.mLogotipo.HeaderText = "Logotipo";
-            this.mLogotipo.Name = "mLogotipo";
-            this.mLogotipo.Width = 130;
-            // 
             // frmMainMunicipio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -166,7 +166,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMainMunicipio";
-            this.Text = "frmMainMunicipio";
+            this.Text = "Municipio principal";
             this.Load += new System.EventHandler(this.frmMainMunicipio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grDatos)).EndInit();
             this.ResumeLayout(false);

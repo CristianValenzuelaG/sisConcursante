@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HerramientasData.Modelo;
+using HerramientasDatas.Modelo;
 
 
 namespace sisConcurso.Manager
@@ -105,6 +105,50 @@ namespace sisConcurso.Manager
             }
         }
 
-        
+
+
+        //Para la web
+        public static List<candidata> Buscar(string valor, Boolean Status, string mun)
+        {
+            
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    return ctx.candidatas.Where(r => r.cStatus == Status && r.cNombreCom.Contains(valor) && r.municipio.mNombre.Contains(mun))
+                        .OrderByDescending(r => r.cRaking)
+                        .ToList();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }     
+        public static void Like(int pkCandidata)
+        {
+           candidata nCandidata = CandidataManage.BuscarporID(pkCandidata);
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    int likes = Convert.ToInt32(nCandidata.cRaking);
+                    int like = 1;
+                    likes += like;
+
+                    nCandidata.cRaking = likes;
+                    ctx.candidatas.Attach(nCandidata);
+                    ctx.Entry(nCandidata).State = EntityState.Modified;
+                    ctx.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

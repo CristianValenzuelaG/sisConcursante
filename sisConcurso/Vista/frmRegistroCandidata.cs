@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
-using HerramientasData.Modelo;
+
+using HerramientasDatas.Modelo;
 using sisConcurso.Manager;
 
 namespace sisConcurso.Vista
@@ -65,8 +66,8 @@ namespace sisConcurso.Vista
             dtpFDN.Value = nCandidata.cFDN;
             idlugar = Convert.ToInt32(nCandidata.fkMunicipio);
             rakin = Convert.ToInt32(nCandidata.cRaking);
-            idusuario = Convert.ToInt32(nCandidata.fkUsuario); 
-            
+            idusuario = Convert.ToInt32(nCandidata.fkUsuario);
+            picFoto.Image = ToolImagen.Base64StringToBitmap(nCandidata.cFoto);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -91,6 +92,8 @@ namespace sisConcurso.Vista
                 nCandidata.cRaking = Convert.ToInt32(rakin);
                 nCandidata.fkMunicipio = Convert.ToInt32(cmbMunicipio.SelectedValue);
                 nCandidata.fkUsuario = idusuario;
+                nCandidata.cFoto = ImagenString;
+
 
                 CandidataManage.Guarda(nCandidata);
                 mCandidata.CargarCandidata();

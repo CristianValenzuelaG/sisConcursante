@@ -195,6 +195,7 @@
             this.picFoto.Location = new System.Drawing.Point(12, 211);
             this.picFoto.Name = "picFoto";
             this.picFoto.Size = new System.Drawing.Size(176, 158);
+            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFoto.TabIndex = 16;
             this.picFoto.TabStop = false;
             // 

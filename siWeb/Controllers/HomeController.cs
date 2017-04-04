@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HerramientasData.Modelo;
+using HerramientasDatas.Modelo;
+using sisConcurso.Manager;
 using siWeb.ManagerWeb;
 
 
@@ -12,12 +13,17 @@ namespace siWeb.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index(string txtValor = "")
+        public ActionResult Index(string word = "", string m = "")
         {
-            List<candidata> datos = candidataManager.Listar(txtValor);
-            ViewBag.datos = datos;
-            ViewBag.txtValor = txtValor;
+            ViewBag.DatosC = CandidataManage.Buscar(word, true, m);
+            ViewBag.DatosM = MunicipioManage.getAll();
+            ViewBag.word = word;
             return View();
+        }
+        public ActionResult Like(int pkCandidata)
+        {
+            CandidataManage.Like(pkCandidata);
+            return RedirectToAction("");
         }
     }
 }

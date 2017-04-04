@@ -5,11 +5,11 @@ using System.Data.Entity.Core.Objects.DataClasses;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HerramientasData.Modelo;
+using HerramientasDatas.Modelo;
 
 namespace sisConcurso.Manager
 {
-    class MunicipioManage
+    public class MunicipioManage
     {
 
         public static List<municipio> BuscarporMunicipio(string valorBuscar)
@@ -98,6 +98,21 @@ namespace sisConcurso.Manager
             catch (Exception)
             {
 
+                throw;
+            }
+        }
+
+        public static List<municipio> getAll()
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    return ctx.municipios.ToList();
+                }
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }

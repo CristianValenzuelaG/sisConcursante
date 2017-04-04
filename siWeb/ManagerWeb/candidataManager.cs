@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using HerramientasData.Modelo;
+
+using HerramientasDatas.Modelo;
 
 namespace siWeb.ManagerWeb
 {
@@ -26,13 +27,28 @@ namespace siWeb.ManagerWeb
         }
 
 
-        public static List<candidata> BuscarporMu(string valor)
+        public static List<candidata> BuscarporMu(Boolean valor)
         {
             try
             {
                 using (var ctx = new DataModel())
                 {
-                    return ctx.candidatas.Where(r => r.cNombreCom ==valor).ToList();
+                    return ctx.candidatas.Where(r => r.cStatus ==valor).ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static List<candidata> getAll(Boolean status)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    return ctx.candidatas.Where(r => r.cStatus == status).ToList();
                 }
             }
             catch (Exception)

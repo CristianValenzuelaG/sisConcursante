@@ -40,5 +40,9 @@ C:\Users\Galaviz\Documents\GitHub\sisConcursante\sisConcurso\obj\Debug\sisConcur
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\obj\Debug\sisConcurso.Vista.frmEliminarCandidata.resources
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\bin\Debug\aforge.video.directshow.dll
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\bin\Debug\AForge.Video.dll
-C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\bin\Debug\HerramientasData.exe
-C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\bin\Debug\HerramientasData.pdb
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\bin\Debug\HerramientasDatas.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\bin\Debug\HerramientasDatas.pdb
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\obj\Debug\sisConcurso.frmLogincs.resources
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\obj\Debug\sisConcurso.Vista.frmMainUsuario.resources
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\obj\Debug\sisConcurso.Vista.frmAgregarUsuario.resources
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\sisConcurso\obj\Debug\sisConcurso.Vista.frmEliminarUsuario.resources

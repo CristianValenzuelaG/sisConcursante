@@ -34,7 +34,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.picCamara = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.cmbDispositivo = new System.Windows.Forms.ComboBox();
             this.btnTomar = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -98,21 +97,13 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "Seleccione Camra";
             // 
-            // cmbDispositivo
-            // 
-            this.cmbDispositivo.FormattingEnabled = true;
-            this.cmbDispositivo.Location = new System.Drawing.Point(12, 337);
-            this.cmbDispositivo.Name = "cmbDispositivo";
-            this.cmbDispositivo.Size = new System.Drawing.Size(150, 28);
-            this.cmbDispositivo.TabIndex = 29;
-            // 
             // btnTomar
             // 
-            this.btnTomar.Location = new System.Drawing.Point(22, 371);
+            this.btnTomar.Location = new System.Drawing.Point(22, 337);
             this.btnTomar.Name = "btnTomar";
             this.btnTomar.Size = new System.Drawing.Size(117, 30);
             this.btnTomar.TabIndex = 28;
-            this.btnTomar.Text = "Tomar Foto";
+            this.btnTomar.Text = "Examinar";
             this.btnTomar.UseVisualStyleBackColor = true;
             this.btnTomar.Click += new System.EventHandler(this.btnTomar_Click);
             // 
@@ -161,7 +152,6 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.cmbDispositivo);
             this.Controls.Add(this.btnTomar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label7);
@@ -190,7 +180,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.PictureBox picCamara;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cmbDispositivo;
         private System.Windows.Forms.Button btnTomar;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label7;

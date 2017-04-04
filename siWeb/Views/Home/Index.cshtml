@@ -1,43 +1,62 @@
 ﻿
 @{
-    ViewBag.Title = "Concursantes";
-    List<HerramientasData.Modelo.candidata> Datos = ViewBag.Datos;
-    string Valor = ViewBag.txtValor;
+    ViewBag.Title = "Index";
+    List<HerramientasDatas.Modelo.candidata> DatosC = ViewBag.DatosC;
+    List<HerramientasDatas.Modelo.municipio> DatosM = ViewBag.DatosM;
+    string word = ViewBag.word;
 }
-<br/>
-<br/>
-<div class="row ">
 
+<br />
 
-
-
-    <div class="col s12 m7">
+<div class="row">
+    <div class="col s12">
         @using (Html.BeginForm("Index", "Home", FormMethod.Get))
         {
-            <div class="form-group">
-                <label class="control-label col-xs-3">Apellidos</label>
-                <div class="col-xs-8">
-                    <input type="text" class="form-control" value="@Valor" placeholder="Filtrar por apellido" name="txtValor">
-
-                </div>
-                <div class="col-xs-1">
-                    <input type="submit" class="btn btn-primary" value="Filtrar" />
-                </div>
+            <div class="input-field col s4">
+                <input id="name" type="text" name="word" placeholder="Buscar" value="@word" />
+                <label for="name">Candidata</label>
+            </div>
+            <div class="col">
+                <label for="municipios">Municipios</label>
+                <select id="municipios" name="m">
+                    <option value="" disabled selected>Elija un municipio</option>
+                    @foreach (HerramientasDatas.Modelo.municipio item in DatosM)
+                    {
+                        <option value="@item.mNombre">@item.mNombre</option>
+                    }
+                </select>
+            </div>
+            <div class="col ">
+                <button type="submit" class="white-text waves-effect waves-light btn"><i class="material-icons">search</i></button>
             </div>
         }
-        @foreach (HerramientasData.Modelo.candidata item in Datos)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12">
+        @foreach (HerramientasDatas.Modelo.candidata item in DatosC)
         {
-            <div class="card">
-                <div class="card-image">
-                    <img class="activator" src=""/>
-                    <span class="card-title">@item.cNombreCom</span>
-                </div>
-                <div class="card-content">
-                    <p>@item.cDescripcion</p>
-                </div>
-                <div class="card-action">
-                    <div class="center-align">
-                        <a class="white-text waves-effect waves-light btn" href="#">Like (@item.cRaking)</a>
+            <div class="col s4">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img class="responsive-img"
+                             src="data:image/png;base64,@item.cFoto" alt="@item.cNombreCom">
+                        <span class="card-title">@item.cNombreCom</span>
+                    </div>
+                    <div class="card-content">
+                        <p><b>Edad: </b>@item.cFDN</p>
+                        <p><b>Estudios: </b>@item.cNivelStudio</p>
+                        <p><b>Descripción: </b>@item.cDescripcion</p>
+                    </div>
+                    <div class="card-action">
+                        @using (Html.BeginForm("Like", "Home", FormMethod.Post))
+                        {
+                            <input type="hidden" name="pkCandidata" value="@item.pkCandidata" />
+                            <div class="center-align">
+                                <button type="submit" class="white-text waves-effect waves-light btn">Like (@item.cRaking)</button>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -45,5 +64,8 @@
     </div>
 </div>
 
-<h2>Index</h2>
+
+
+
+    <h2>Index</h2>
 

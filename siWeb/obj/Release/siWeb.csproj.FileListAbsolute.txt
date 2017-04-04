@@ -16,7 +16,6 @@ C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\siWeb.dll
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\siWeb.pdb
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\EntityFramework.dll
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\EntityFramework.SqlServer.dll
-C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\HerramientasData.exe
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\Microsoft.AI.DependencyCollector.dll
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -34,7 +33,6 @@ C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\System.Web.Raz
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\System.Web.Webpages.Deployment.dll
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\System.Web.Webpages.dll
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\System.Web.Webpages.Razor.dll
-C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\HerramientasData.pdb
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\EntityFramework.xml
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\EntityFramework.SqlServer.xml
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\Microsoft.AI.DependencyCollector.xml
@@ -57,3 +55,10 @@ C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\es\System.Web.
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\es\System.Web.Mvc.resources.dll
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\obj\Release\siWeb.dll
 C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\obj\Release\siWeb.pdb
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\obj\Release\siWeb.csprojResolveAssemblyReference.cache
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\sisConcurso.exe
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\AForge.Video.DirectShow.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\AForge.Video.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\sisConcurso.pdb
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\HerramientasDatas.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\sisConcurso\siWeb\bin\HerramientasDatas.pdb
