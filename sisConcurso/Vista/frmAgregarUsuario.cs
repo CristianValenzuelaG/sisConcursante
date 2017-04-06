@@ -57,33 +57,40 @@ namespace sisConcurso.Vista
         private void button1_Click(object sender, EventArgs e)
         {
             usuario nUsuario = new usuario();
-            if (cmbRol.SelectedIndex > 0)
+            if (txtContra.Text == "" || txtCuenta.Text == "" || cmbRol.SelectedIndex == null)
             {
-                if (pk > 0)
-                {
-                    nUsuario.pkUsuario = pk;
-                    nUsuario.sEmail = txtCuenta.Text;
-                    nUsuario.sPassword = txtContra.Text;
-                    nUsuario.fkRol = idRol;
-                    UsuarioManeger.GuardaUsuario(nUsuario);
-                }
-                else
-                {
-                    nUsuario.sEmail = txtCuenta.Text;
-                    nUsuario.sPassword = txtContra.Text;
-                    nUsuario.fkRol = Convert.ToInt32(cmbRol.SelectedIndex);
-                    UsuarioManeger.GuardaUsuario(nUsuario);
-                    mUsuario.CargarUsuarios();
-                    
-                }
-                this.Close();
+                MessageBox.Show("Error faltan datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtContra.Focus();
             }
             else
             {
-                MessageBox.Show("Favor de Seleccionar un Rol", "Advertencia", MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-            }
+                if (cmbRol.SelectedIndex > 0)
+                {
+                    if (pk > 0)
+                    {
+                        nUsuario.pkUsuario = pk;
+                        nUsuario.sEmail = txtCuenta.Text;
+                        nUsuario.sPassword = txtContra.Text;
+                        nUsuario.fkRol = idRol;
+                        UsuarioManeger.GuardaUsuario(nUsuario);
+                        mUsuario.CargarUsuarios();
+                    }
+                    else
+                    {
+                        nUsuario.sEmail = txtCuenta.Text;
+                        nUsuario.sPassword = LoginTool.GetMD5(txtContra.Text);
+                        nUsuario.fkRol = Convert.ToInt32(cmbRol.SelectedIndex);
+                        UsuarioManeger.GuardaUsuario(nUsuario);
+                    }
+                    this.Close();
+                }
 
+                else
+                {
+                    MessageBox.Show("Favor de Seleccionar un Rol", "Advertencia", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -94,6 +101,12 @@ namespace sisConcurso.Vista
         private void frmAgregarUsuario_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void txtContra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidacionesTXT va = new ValidacionesTXT();
+            va.SoloNumeros(e);
         }
     }
 }

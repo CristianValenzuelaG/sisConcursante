@@ -16,6 +16,7 @@ namespace sisConcurso.Vista
     public partial class frmMainMunicipio : Form
     {
         public static int idMun;
+
         public void CargarMunicipio()
         {
             List<municipio> nLista = new List<municipio>();
@@ -31,7 +32,20 @@ namespace sisConcurso.Vista
             InitializeComponent();
             grDatos.AutoGenerateColumns = false;
         }
+        public void ProcesarPermisos()
+        {
+            int permisos = 0;
 
+            foreach (var obj in this.groupBox1.Controls)
+            {
+                if (obj is Button)
+                {
+                    Button btn = (Button)obj;
+                    permisos = Convert.ToInt32(btn.Tag);
+                    btn.Enabled = Form1.uHelper.TienePermiso(permisos);
+                }
+            }
+        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -45,6 +59,7 @@ namespace sisConcurso.Vista
         private void frmMainMunicipio_Load(object sender, EventArgs e)
         {
             CargarMunicipio();
+            ProcesarPermisos();
            
         }
 
@@ -70,16 +85,18 @@ namespace sisConcurso.Vista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            MunicipioManage mun = new MunicipioManage();
             DialogResult me = MessageBox.Show("Esta a punto de borra un municipio esta segur@ que quiere hacerlo ? ",
                 "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (me == DialogResult.OK)
             {
                 if (grDatos.SelectedCells.Count > 0)
                 {
-                    MunicipioManage deli = new MunicipioManage();
-                    deli.eliminar(Convert.ToInt32(this.grDatos.CurrentRow.Cells["pkMunicipio"].Value));
+                     mun.eliminar( Convert.ToInt32(this.grDatos.CurrentRow.Cells["pkMunicipio"].Value));
+                    CargarMunicipio();
+                   
                 }
-                else
+
                 {
                     MessageBox.Show("Error no a seleccionado ningun municipio", "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
@@ -89,7 +106,7 @@ namespace sisConcurso.Vista
             {
                 
             }
-            this.CargarMunicipio();
+           
 
         }
     }

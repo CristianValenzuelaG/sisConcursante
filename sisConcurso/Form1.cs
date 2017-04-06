@@ -20,6 +20,9 @@ namespace sisConcurso
             InitializeComponent();
             this.Text = "Concurso "+ DateTime.Today.Year;
         }
+        /// <summary>
+        /// Esta funcion verifica los controles por medio del tag y verifica si tiene permiso para usarlo
+        /// </summary>
         public void ProcesarPermisos()
         {
             int permisos = 0;
@@ -68,6 +71,12 @@ namespace sisConcurso
         {
             frmMainUsuario ma = new frmMainUsuario();
             ma.Show();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            frmMainReportes repor = new frmMainReportes();
+            repor.Show();
         }
     }
 }

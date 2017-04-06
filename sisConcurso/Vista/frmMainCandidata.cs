@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 using HerramientasDatas.Modelo;
 using sisConcurso.Manager;
+using sisConcurso.Manager.Helpers;
 
 namespace sisConcurso.Vista
 {
     public partial class frmMainCandidata : Form
     {
+       
         public static int idCon;
         public void CargarCandidata()
         {
@@ -30,9 +32,23 @@ namespace sisConcurso.Vista
             InitializeComponent();
             grdDatos.AutoGenerateColumns = false;
         }
-       
+        public void ProcesarPermisos()
+        {
+            int permisos = 0;
+
+            foreach (var obj in this.groupBox1.Controls)
+            {
+                if (obj is Button)
+                {
+                    Button btn = (Button)obj;
+                    permisos = Convert.ToInt32(btn.Tag);
+                    btn.Enabled = Form1.uHelper.TienePermiso(permisos);
+                }
+            }
+        }
         private void frmMainCandidata_Load(object sender, EventArgs e)
         {
+            ProcesarPermisos();
             this.CargarCandidata();
            
         }

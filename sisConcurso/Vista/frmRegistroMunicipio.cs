@@ -57,27 +57,35 @@ namespace sisConcurso.Vista
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             municipio nMunicipio = new municipio();
-            if (pk > 0)
+            if (txtNombre.Text == "" || txtDescripcion.Text == "" || picCamara.Image == null)
             {
-                nMunicipio.pkMunicipio = pk;
-                nMunicipio.mNombre = txtNombre.Text;
-                nMunicipio.mDescripion = txtDescripcion.Text;
-                nMunicipio.mLogotipo = ImagenString;
-
-
-                MunicipioManage.Guarda(nMunicipio);
-                mMunicipio.CargarMunicipio();
+                MessageBox.Show("Error Faltan datos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNombre.Focus();
             }
             else
             {
-            nMunicipio.mNombre = txtNombre.Text;
-            nMunicipio.mDescripion = txtDescripcion.Text;
-            nMunicipio.mLogotipo = ImagenString;
+                if (pk > 0)
+                {
+                    nMunicipio.pkMunicipio = pk;
+                    nMunicipio.mNombre = txtNombre.Text;
+                    nMunicipio.mDescripion = txtDescripcion.Text;
+                    nMunicipio.mLogotipo = ImagenString;
 
-            MunicipioManage.Guarda(nMunicipio);
-            
+
+                    MunicipioManage.Guarda(nMunicipio);
+                    mMunicipio.CargarMunicipio();
+                }
+                else
+                {
+                    nMunicipio.mNombre = txtNombre.Text;
+                    nMunicipio.mDescripion = txtDescripcion.Text;
+                    nMunicipio.mLogotipo = ImagenString;
+
+                    MunicipioManage.Guarda(nMunicipio);
+
+                }
+                this.Close();
             }
-            this.Close();
         }
 
         private void frmRegistroMunicipio_Load(object sender, EventArgs e)
@@ -118,6 +126,12 @@ namespace sisConcurso.Vista
             {
                 MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido" + ex.Message);
             }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidacionesTXT va = new ValidacionesTXT();
+            va.SoloLetra(e);
         }
     }
 }

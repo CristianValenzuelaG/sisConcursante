@@ -13,6 +13,7 @@ using AForge.Video.DirectShow;
 
 using HerramientasDatas.Modelo;
 using sisConcurso.Manager;
+using System.Text.RegularExpressions;
 
 namespace sisConcurso.Vista
 {
@@ -67,6 +68,7 @@ namespace sisConcurso.Vista
             idlugar = Convert.ToInt32(nCandidata.fkMunicipio);
             rakin = Convert.ToInt32(nCandidata.cRaking);
             idusuario = Convert.ToInt32(nCandidata.fkUsuario);
+            ImagenString = nCandidata.cFoto;
             picFoto.Image = ToolImagen.Base64StringToBitmap(nCandidata.cFoto);
         }
 
@@ -78,48 +80,58 @@ namespace sisConcurso.Vista
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             candidata nCandidata = new candidata();
-
-            if (pk > 0)
+            if (txtNombre.Text == "" || txtCorreo.Text == "" || txtCurp.Text == "" || txtDescripcion.Text == "" ||
+                txtEstudio.Text == "" || cmbMunicipio.SelectedValue == null || picFoto.Image == null)
             {
-                nCandidata.pkCandidata = pk;
-                nCandidata.cNombreCom = txtNombre.Text;
-                nCandidata.cCorre = txtCorreo.Text;
-                nCandidata.cAnoComvoca = dtpAño.Value.Date;
-                nCandidata.cCurp = txtCurp.Text;
-                nCandidata.cDescripcion = txtDescripcion.Text;
-                nCandidata.cNivelStudio = txtEstudio.Text;
-                nCandidata.cFDN = dtpFDN.Value.Date;
-                nCandidata.cRaking = Convert.ToInt32(rakin);
-                nCandidata.fkMunicipio = Convert.ToInt32(cmbMunicipio.SelectedValue);
-                nCandidata.fkUsuario = idusuario;
-                nCandidata.cFoto = ImagenString;
-
-
-                CandidataManage.Guarda(nCandidata);
-                mCandidata.CargarCandidata();
+                MessageBox.Show("Faltan Datos Favor de Verificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                
-                nCandidata.cNombreCom = txtNombre.Text;
-                nCandidata.cCorre = txtCorreo.Text;
-                nCandidata.cAnoComvoca = dtpAño.Value.Date;
-                nCandidata.cCurp = txtCurp.Text;
-                nCandidata.cDescripcion = txtDescripcion.Text;
-                nCandidata.cNivelStudio = txtEstudio.Text;
-                nCandidata.cFDN = dtpFDN.Value.Date;
-                nCandidata.fkMunicipio = Convert.ToInt32(cmbMunicipio.SelectedValue);
-                nCandidata.cRaking = 1;
-                nCandidata.cFoto = ImagenString;
+                if (pk > 0)
+                {
+                    nCandidata.pkCandidata = pk;
+                    nCandidata.cNombreCom = txtNombre.Text;
+                    nCandidata.cCorre = txtCorreo.Text;
+                    nCandidata.cAnoComvoca = dtpAño.Value.Date;
+                    nCandidata.cCurp = txtCurp.Text;
+                    nCandidata.cDescripcion = txtDescripcion.Text;
+                    nCandidata.cNivelStudio = txtEstudio.Text;
+                    nCandidata.cFDN = dtpFDN.Value.Date;
+                    nCandidata.cRaking = Convert.ToInt32(rakin);
+                    nCandidata.fkMunicipio = Convert.ToInt32(cmbMunicipio.SelectedValue);
+                    nCandidata.fkUsuario = idusuario;
+                    nCandidata.cFoto = ImagenString;
 
-                CandidataManage.Guarda(nCandidata);
+
+                    CandidataManage.Guarda(nCandidata);
+                    mCandidata.CargarCandidata();
+                }
+                else
+                {
+                    if (CandidataManage.BuscarCandiFecha(txtNombre.Text, dtpAño.Value.Year, true, Convert.ToInt32(cmbMunicipio.SelectedValue)).Count < 1)
+                    {
+                        nCandidata.cNombreCom = txtNombre.Text;
+                        nCandidata.cCorre = txtCorreo.Text;
+                        nCandidata.cAnoComvoca = Convert.ToDateTime(dtpAño.Value.Date.Year);
+                        nCandidata.cCurp = txtCurp.Text;
+                        nCandidata.cDescripcion = txtDescripcion.Text;
+                        nCandidata.cNivelStudio = txtEstudio.Text;
+                        nCandidata.cFDN = dtpFDN.Value.Date;
+                        nCandidata.fkMunicipio = Convert.ToInt32(cmbMunicipio.SelectedValue);
+                        nCandidata.cRaking = 1;
+                        nCandidata.cFoto = ImagenString;
+
+                        CandidataManage.Guarda(nCandidata);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ya existe la candidata", "Error");
+                        txtNombre.Focus();
+                    }
+                    this.Close();
+                }
             }
-            
-
-            this.Close();
-
-
-
         }
 
         private void frmRegistroCandidata_Load(object sender, EventArgs e)
@@ -182,6 +194,53 @@ namespace sisConcurso.Vista
             ImagenBitmap = new System.Drawing.Bitmap(pathImagen);
             ImagenString = ToolImagen.ToBase64String(ImagenBitmap, ImageFormat.Jpeg);
             picFoto.Image = ImagenBitmap;
+        }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtCorreo_Leave(object sender, EventArgs e)
+        {
+            if (ValidacionesTXT.ValidarEmail(txtCorreo.Text))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Direccion De Correo Electronico No Valido Debe de tener el formato : Ejemplo@gmail.com, " +
+                    "Favor Sellecione Un Correo Valido", "Validacion De Correo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCorreo.SelectAll();
+                txtCorreo.Focus();
+            }
+        }
+
+        private void txtCurp_Leave(object sender, EventArgs e)
+        {
+            if (ValidacionesTXT.ValidarCurp(txtCurp.Text))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Curp No Valida Debe de tener el formato : GVCD960808HSRLLS06, " +
+                    "Favor Sellecione Un Curp Valido", "Validacion De Curp", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCurp.SelectAll();
+                txtCurp.Focus();
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidacionesTXT val = new ValidacionesTXT();
+            val.SoloLetra(e);
+        }
+
+        private void txtEstudio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidacionesTXT val = new ValidacionesTXT();
+            val.SoloLetra(e);
         }
     }
 }

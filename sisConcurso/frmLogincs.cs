@@ -42,5 +42,11 @@ namespace sisConcurso
         {
             this.Close();
         }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidacionesTXT va = new ValidacionesTXT();
+            va.SoloNumeros(e);
+        }
     }
 }

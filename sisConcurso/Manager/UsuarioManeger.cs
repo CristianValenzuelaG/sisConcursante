@@ -11,6 +11,12 @@ namespace sisConcurso.Manager
 {
     class UsuarioManeger
     {
+        /// <summary>
+        /// Funcion para la autenticacion de un usuario
+        /// </summary>
+        /// <param name="sUsuario">Regresa un strin del email registrado</param>
+        /// <param name="sPassword">Regresa la contraseña</param>
+        /// <returns>Regresa un true si se presenta el registro</returns>
         public static UsuarioHelper Autentificar(String sUsuario, String sPassword)
         {
             UsuarioHelper uHelper = new UsuarioHelper();
@@ -30,6 +36,12 @@ namespace sisConcurso.Manager
             }
             return uHelper;
         }
+
+        /// <summary>
+        /// Metodo para buscar por email del usuario
+        /// </summary>
+        /// <param name="Email">String del email mandado desde el texbox</param>
+        /// <returns>Regresa un usuario con los datos mandados</returns>
         private static usuario BuscarPorEmail(string Email)
         {
             try
@@ -47,6 +59,11 @@ namespace sisConcurso.Manager
                 throw;
             }
         }
+
+        /// <summary>
+        /// Metodo para verificar los datos para registrar un nuevo usuario
+        /// </summary>
+        /// <param name="nUsuario">Manda los datos del usuario a registrar</param>
         public static void RegistrarNuevoUsuario(usuario nUsuario)
         {
             try
@@ -111,6 +128,11 @@ namespace sisConcurso.Manager
             }
         }
 
+        /// <summary>
+        /// buscar por id del usuario 
+        /// </summary>
+        /// <param name="Id">dato del pk del usuario</param>
+        /// <returns>regresa un registro de un usuario dependiendo el id mandado</returns>
         public static usuario BuscarPorID(int Id)
         {
             try
@@ -128,6 +150,10 @@ namespace sisConcurso.Manager
             }
         }
 
+        /// <summary>
+        /// Se manda  los datos para dar baja al usuario
+        /// </summary>
+        /// <param name="nUsuario">Regresa para dar debaja al usuario con todos los datos</param>
         public static void bajaUsuario(usuario nUsuario)
         {
             try

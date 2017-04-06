@@ -11,7 +11,11 @@ namespace sisConcurso.Manager
 {
     public class MunicipioManage
     {
-
+        /// <summary>
+        /// Metodo para buscar por municipio regresando una lista
+        /// </summary>
+        /// <param name="valorBuscar">se manda el nombre del municipio</param>
+        /// <returns>Regresa los valores de la lista de municipio</returns>
         public static List<municipio> BuscarporMunicipio(string valorBuscar)
         {
             try
@@ -26,7 +30,10 @@ namespace sisConcurso.Manager
                 throw;
             }
         }
-
+        /// <summary>
+        /// Metodo para guardar y modificar un municipio
+        /// </summary>
+        /// <param name="nMunicipio">Se manda los datos del municipio</param>
         public static void Guarda(municipio nMunicipio)
         {
             try
@@ -51,7 +58,10 @@ namespace sisConcurso.Manager
                 throw;
             }
         }
-
+        /// <summary>
+        /// Funcion para llenar el combo de los municipios
+        /// </summary>
+        /// <returns>Regresa una lista de municipios para llenar un combobox</returns>
         public static List<municipio> llenarcombo() // cargar datos de la base de datos 
         {
             try
@@ -69,6 +79,11 @@ namespace sisConcurso.Manager
             }
         }
 
+        /// <summary>
+        /// Metodo para buscar por id Municipio
+        /// </summary>
+        /// <param name="pkMunicipio">Se envia el id del munipio</param>
+        /// <returns>Regresa el registro de un municipio por el pk mandado</returns>
         public static municipio BuscarporIDM(int pkMunicipio)
         {
             try
@@ -83,14 +98,18 @@ namespace sisConcurso.Manager
                 throw;
             }
         }
-
-        public void eliminar(int pkMunicipio)
+        /// <summary>
+        /// Funcion para eliminar un registro de municipio dependiendo el id mandado
+        /// </summary>
+        /// <param name="pkMunicipio">Id del municipio a borrar</param>
+        public void eliminar(int pkMunicipios)
         {
             try
             {
                 using (var ctx = new DataModel())
                 {
-                    municipio muni = ctx.municipios.Single(r => r.pkMunicipio == pkMunicipio);
+                    municipio muni = ctx.municipios.Single(r => r.pkMunicipio == pkMunicipios);
+                  
                     ctx.Entry(muni).State = EntityState.Deleted;
                     ctx.SaveChanges();
                 }
@@ -102,6 +121,10 @@ namespace sisConcurso.Manager
             }
         }
 
+        /// <summary>
+        /// obtiene todos los datos del municipio
+        /// </summary>
+        /// <returns>regresa una lista de todos los municipios</returns>
         public static List<municipio> getAll()
         {
             try

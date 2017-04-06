@@ -34,11 +34,13 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(126, 187);
+            this.btnCancelar.Location = new System.Drawing.Point(10, 227);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(83, 33);
             this.btnCancelar.TabIndex = 12;
@@ -48,7 +50,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(215, 187);
+            this.btnIngresar.Location = new System.Drawing.Point(215, 227);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(89, 33);
             this.btnIngresar.TabIndex = 11;
@@ -59,25 +61,26 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 148);
+            this.label2.Location = new System.Drawing.Point(6, 188);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(92, 20);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Password";
+            this.label2.Text = "Contraseña";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(92, 147);
+            this.txtPassword.Location = new System.Drawing.Point(107, 185);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(201, 26);
+            this.txtPassword.Size = new System.Drawing.Size(186, 26);
             this.txtPassword.TabIndex = 9;
             this.txtPassword.Text = "123";
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 102);
+            this.label1.Location = new System.Drawing.Point(8, 158);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 8;
@@ -85,17 +88,28 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(92, 101);
+            this.txtUsuario.Location = new System.Drawing.Point(92, 155);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(201, 26);
             this.txtUsuario.TabIndex = 7;
             this.txtUsuario.Text = "cris";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::sisConcurso.Properties.Resources.image_20170130_125259;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(323, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmLogincs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 234);
+            this.ClientSize = new System.Drawing.Size(316, 268);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.label2);
@@ -105,7 +119,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLogincs";
-            this.Text = "frmLogincs";
+            this.Text = "Inicio Sesion";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +134,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

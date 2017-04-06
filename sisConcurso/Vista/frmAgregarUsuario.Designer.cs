@@ -83,6 +83,7 @@
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(323, 26);
             this.txtContra.TabIndex = 27;
+            this.txtContra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContra_KeyPress);
             // 
             // label2
             // 
